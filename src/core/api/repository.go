@@ -754,7 +754,7 @@ func getTagDetail(client *registry.Repository, tag string) (*models.TagDetail, e
 		Name: tag,
 	}
 
-	digest, mediaType, payload, err := client.PullManifest(tag, []string{schema2.MediaTypeManifest})
+	digest, mediaType, payload, err := client.PullManifest(tag, []string{schema2.MediaTypeManifest, ocispec.MediaTypeImageManifest})
 	if err != nil {
 		return detail, err
 	}
