@@ -498,7 +498,7 @@ func ParseManifestInfoFromReq(req *http.Request) (*ManifestInfo, error) {
 	mediaType := req.Header.Get("Content-Type")
 	if mediaType != schema1.MediaTypeManifest &&
 		mediaType != schema1.MediaTypeSignedManifest &&
-		mediaType != schema2.MediaTypeManifest && mediaType != schema2.MediaTypeManifest &&
+		mediaType != schema2.MediaTypeManifest &&
 		mediaType != ocispec.MediaTypeImageManifest {
 		return nil, fmt.Errorf("unsupported content type for manifest: %s", mediaType)
 	}
